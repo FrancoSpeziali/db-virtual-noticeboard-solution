@@ -5,7 +5,8 @@ export default function NewNotice() {
   const [text, setText] = useState("");
   const [author, setAuthor] = useState("");
 
-  const handleFormSubmit = async () => {
+  const handleFormSubmit = async (event) => {
+    event.preventDefault();
     try {
       await axios.post("http://localhost:3001/notices/new", {
         text,
